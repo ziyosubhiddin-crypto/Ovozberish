@@ -1,4 +1,4 @@
-
+import os
 import asyncio
 import aiosqlite
 import logging
@@ -14,12 +14,14 @@ from aiogram.types import (
 )
 
 # ================== SOZLAMALAR ==================
-TOKEN = "8261172068:AAESmLWKwH74zKKu_IMMHSynU_wGOb6eyNo"   # <-- TOKENNI BU YERGA QO'YING (yangisini!)
+TOKEN = os.getenv("BOT_TOKEN", "")
+if not TOKEN:
+    raise RuntimeError("BOT_TOKEN env yo‘q! Railway Variables ga BOT_TOKEN qo‘ying.")  # <-- TOKENNI BU YERGA QO'YING (yangisini!)
 
 CHANNEL_ID = -1003855350317      # <-- kanal ID
 ADMIN_IDS = {2001525037}             # <-- admin user_id lar
 
-DB_PATH = "votes.db"
+DB_PATH = os.getenv("DB_PATH", "/app/data/votes.db")
 
 MEDIA_GROUP_WAIT = 1.3               # albom yig'ish (sek)
 AFTER_SEND_EDIT_DELAY = 1.2          # kanalga yuborgandan keyin edit qilish (sek)
