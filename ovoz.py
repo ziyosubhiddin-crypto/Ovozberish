@@ -21,7 +21,8 @@ if not TOKEN:
 CHANNEL_ID = -1003855350317      # <-- kanal ID
 ADMIN_IDS = {2001525037}             # <-- admin user_id lar
 
-DB_PATH = os.getenv("DB_PATH", "/app/data/votes.db")
+DB_PATH = os.getenv("DB_PATH", "/opt/ovozbot/data/votes.db")
+
 
 MEDIA_GROUP_WAIT = 1.3               # albom yig'ish (sek)
 AFTER_SEND_EDIT_DELAY = 1.2          # kanalga yuborgandan keyin edit qilish (sek)
